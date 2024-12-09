@@ -1,13 +1,10 @@
 package lang_utils;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Represents a text composed of {@code Sentence} objects.
  */
 public class Text {
-    private final List<Sentence> sentences;
+    private final Sentence[] sentences;
 
     /**
      * Constructs a {@code Text} object by parsing the specified string.
@@ -15,12 +12,12 @@ public class Text {
      * @param text the string representation of the text
      */
     public Text(String text) {
-        sentences = new ArrayList<>();
         String normalizedText = text.replaceAll("[ \\t]+", " ");
         String[] splitSentences = normalizedText.split("(?<=[.!?])");
+        sentences = new Sentence[splitSentences.length];
 
-        for (String sentence : splitSentences) {
-            sentences.add(new Sentence(sentence));
+        for (int i = 0; i < splitSentences.length; i++) {
+            sentences[i] = new Sentence(splitSentences[i]);
         }
     }
 
@@ -58,4 +55,5 @@ public class Text {
         return text.toString().trim();
     }
 }
+
 

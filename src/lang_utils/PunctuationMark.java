@@ -3,7 +3,7 @@ package lang_utils;
 /**
  * Represents a punctuation mark in a sentence.
  */
-public class PunctuationMark {
+public class PunctuationMark implements SentenceComponent {
     private final char value;
 
     /**

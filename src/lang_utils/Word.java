@@ -1,14 +1,10 @@
 package lang_utils;
 
-import java.util.ArrayList;
-import java.util.List;
-
-
 /**
  * Represents a word composed of {@code Letter} objects.
  */
-public class Word {
-    private final List<Letter> letters;
+public class Word implements SentenceComponent {
+    private final Letter[] letters;
 
     /**
      * Constructs a {@code Word} object by parsing the specified string.
@@ -16,9 +12,9 @@ public class Word {
      * @param word the string representation of the word
      */
     public Word(String word) {
-        letters = new ArrayList<>();
-        for (char c : word.toCharArray()) {
-            letters.add(new Letter(c));
+        letters = new Letter[word.length()];
+        for (int i = 0; i < word.length(); i++) {
+            letters[i] = new Letter(word.charAt(i));
         }
     }
 
@@ -26,7 +22,7 @@ public class Word {
      * @return the number of letters in the word
      */
     public int length() {
-        return letters.size();
+        return letters.length;
     }
 
     /**
@@ -41,4 +37,3 @@ public class Word {
         return word.toString();
     }
 }
-
