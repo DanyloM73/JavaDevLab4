@@ -1,7 +1,7 @@
 package lang_utils;
 
 /**
- * Represents a text composed of {@code Sentence} objects.
+ * Represents a text composed of {@link Sentence} objects.
  */
 public class Text {
     private final Sentence[] sentences;

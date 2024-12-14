@@ -1,7 +1,7 @@
 package lang_utils;
 
 /**
- * Represents a sentence composed of {@code Word} and {@code PunctuationMark} objects.
+ * Represents a sentence composed of {@link Word} and {@link PunctuationMark} objects.
  */
 public class Sentence {
     private final SentenceComponent[] components;

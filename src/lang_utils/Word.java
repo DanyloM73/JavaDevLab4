@@ -1,7 +1,7 @@
 package lang_utils;
 
 /**
- * Represents a word composed of {@code Letter} objects.
+ * Represents a word composed of {@link Letter} objects.
  */
 public class Word implements SentenceComponent {
     private final Letter[] letters;
